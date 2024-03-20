@@ -23,6 +23,5 @@ You can check the challenge's result at: [Render Deployed](https://arduino-final
 3. Activate the virtual environment (this step may vary depending on your operating system):
 ```.\venv\Scripts\activate```
 4. Install the project dependencies with `pip install -r requirements.txt`
-5. Have the keys of a user with permissions to use Amazon SES
-6. Run the application server using the command `streamlit run main.py`
-7. Access the link provided by streamlit
+5. Run the application server using the command `streamlit run main.py`
+6. Access the link provided by streamlit
