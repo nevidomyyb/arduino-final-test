@@ -58,10 +58,10 @@ class Monitoring(BasePage):
         if humidity >= 100:
             humidity = 100
         if brightness >= 100:
-            brigthness = 100
+            brightness = 100
         self.st.session_state["humidity_value"] = humidity
         self.st.session_state["temperature_value"] = temperature
-        self.st.session_state["brightness_value"] = brigthness
+        self.st.session_state["brightness_value"] = brightness
         
     def to_sum(self) -> bool:
         num = randint(0,1)
