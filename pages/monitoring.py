@@ -8,6 +8,9 @@ class Monitoring(BasePage):
         super().__init__()
         self.st = st
     def draw(self) -> None:
+        self.generate_random_numbers(self.st.session_state["humidity_value"], self.st.session_state["temperature_value"], self.st.session_state["brightness_value"])
+        sleep(2)
+        self.st.rerun()    
         cols = self.st.columns(3, gap="large")
         with cols[0]:
             self.st.header("Humidity (%)")
@@ -37,10 +40,6 @@ class Monitoring(BasePage):
                     self.st.info('The brightness level is under the minimum seted', icon="ℹ️")
                 if self.st.session_state["brightness_value"] > self.st.session_state["max_value_brightness"]:
                     self.st.warning('The brightness level is above the maximum seted', icon="ℹ️")
-        
-        self.generate_random_numbers(self.st.session_state["humidity_value"], self.st.session_state["temperature_value"], self.st.session_state["brightness_value"])
-        sleep(2)
-        self.st.rerun()    
         
             
     def generate_random_numbers(self, humidity: float, temperature: float, brightness: float) -> None:
