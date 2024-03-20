@@ -18,6 +18,8 @@ class Monitoring(BasePage):
                     self.st.info('The humidity level is under the minimum seted', icon="ℹ️")
                 if self.st.session_state["humidity_value"] > self.st.session_state["max_value_humidity"]:
                     self.st.warning('The humidity level is above the maximum seted', icon="ℹ️")
+                if self.st.session_state["humidity_value"] > self.st.session_state["min_value_humidity"] and self.st.session_state["humidity_value"] < self.st.session_state["max_value_humidity"]:
+                    self.st.success("The humidity level is normal!", icon="✔")
         with cols[1]:
             self.st.header("Temperature (°C)")
             self.st.subheader(f"{round(self.st.session_state['temperature_value'], 1)} °C")
@@ -37,6 +39,8 @@ class Monitoring(BasePage):
                     self.st.info('The brightness level is under the minimum seted', icon="ℹ️")
                 if self.st.session_state["brightness_value"] > self.st.session_state["max_value_brightness"]:
                     self.st.warning('The brightness level is above the maximum seted', icon="ℹ️")
+                if self.st.session_state["brightness_value"] > self.st.session_state["min_value_brightness"] and self.st.session_state["brightness_value"] < self.st.session_state["max_value_brightness"]:
+                    self.st.success("The brightness level is normal!", icon="✔")
         self.generate_random_numbers(self.st.session_state["humidity_value"], self.st.session_state["temperature_value"], self.st.session_state["brightness_value"])
         sleep(2)
         self.st.rerun()    
