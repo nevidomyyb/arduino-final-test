@@ -60,7 +60,7 @@ class Monitoring(BasePage):
         if humidity > 100:
             humidity = 100
         if brightness > 100:
-            humidity = 100
+            brigthness = 100
         self.st.session_state["humidity_value"] = humidity
         self.st.session_state["temperature_value"] = temperature
         self.st.session_state["brightness_value"] = brightness
